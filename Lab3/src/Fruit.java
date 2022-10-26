@@ -1,4 +1,4 @@
-import java.util.Enumeration;
+import java.util.ArrayList;
 
 public abstract class Fruit {
     Integer weight;
@@ -25,8 +25,32 @@ public abstract class Fruit {
     static int computeSugarContent(Fruit[] fruits){
         int totalSugar = 0;
         for(int i=0;i<fruits.length;i++){
-            totalSugar = totalSugar + fruits[i].weight;
+            totalSugar = totalSugar + fruits[i].sugar;
         }
+        System.out.println(totalSugar);
         return totalSugar;
+    }
+
+    static void prepareFruit(Fruit[] fruits){
+            for(int i=0;i<fruits.length;i++){
+                if(fruits[i] instanceof Apple){
+                    if(((Apple) fruits[i]).hasSeeds()) {
+                        ((Apple) fruits[i]).removeSeeds();
+                    }
+                }
+                if(fruits[i] instanceof Banana){
+                    if(((Banana) fruits[i]).hasPeel()){
+                        ((Banana) fruits[i]).peelOff();
+                    }
+                }
+                if(fruits[i] instanceof Mango){
+                    if(((Mango) fruits[i]).hasSeeds()){
+                        ((Mango) fruits[i]).removeSeeds();
+                    }
+                    if(((Mango) fruits[i]).hasPeel()){
+                        ((Mango) fruits[i]).peelOff();
+                    }
+                }
+            }
     }
 }
