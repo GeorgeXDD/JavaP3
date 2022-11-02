@@ -1,19 +1,23 @@
 public class Apple extends Fruit implements SeedRemovable{
-    public Apple(Integer weight, Integer sugar, Integer water,Color color){
+    public Apple(Integer weight, Integer sugar, Integer water,Color color)
+    {
         super(weight,sugar,water,color);
     }
 
-    boolean Seeds = true;
+    boolean Seed = true;
+
+
     @Override
-    public boolean hasSeeds() {
-        if(Seeds = true){
+    public boolean hasSeeds()
+    {
+        if(Seed)
             return true;
-        }
         return false;
     }
 
     @Override
-    public void removeSeeds() {
-        Seeds =  false;
+    public void removeSeeds()
+    {
+        Seed = false;
     }
 }
